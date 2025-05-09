@@ -65,11 +65,11 @@ onMounted(async () => {
     story.value = response.data.story;
     chapters.value = response.data.story.chapters;
 
-    // 👇 Si l’URL contient un id de chapitre, on le charge
+    //Si l’URL contient un id de chapitre, on le charge
     if (route.params.id) {
       loadChapter(route.params.id);
     } else {
-      // 👇 Sinon, on charge le chapitre de départ
+      //Sinon, on charge le chapitre de départ
       chapter.value = response.data.starting_chapter;
     }
   } catch (error) {
