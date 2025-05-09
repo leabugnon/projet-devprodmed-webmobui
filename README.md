@@ -41,10 +41,11 @@ FRONTEND_URL=http://localhost:5173
 ```
 
 > 🔁 configuration `cors.php` avec :
+```config.cors
 > 'allowed_origins' => [
     'http://localhost:5173',
 ],
-
+```
 ### Frontend (Vue)
 
 ```bash
