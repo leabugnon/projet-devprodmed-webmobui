@@ -28,16 +28,26 @@ composer install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
+php artisan db:seed
 php artisan serve
 ```
 
 > 🔁 configuration `.env` avec :
+
+⚠️ remplacez 5173 par le bon port ⚠️
 
 ```env
 SANCTUM_STATEFUL_DOMAINS=localhost:5173
 SESSION_DOMAIN=localhost
 FRONTEND_URL=http://localhost:5173
 ```
+
+> 🔁 configuration `.env` avec :
+> 'allowed_origins' => [
+
+    'http://localhost:5173',
+
+],
 
 ### Frontend (Vue)
 
@@ -51,9 +61,9 @@ npm run dev
 
 -   `POST /login` – Connexion
 -   `POST /logout` – Déconnexion
--   `GET /api/users-debug` – utilisateurs
+-   `GET /api/users-debug` – liste des utilisateurs
 -   `GET /api/v1/stories` – Liste des histoires
--   `POST /api/v1/stories` – Créer une histoire (auth)
+-   `GET /api/v1/stories/{id}` – Liste une histoire
 -   `GET /api/chapters/{id}` – Voir un chapitre avec ses choix
 
 ## 📁 Structure
