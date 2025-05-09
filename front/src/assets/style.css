@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+a,
+button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover,
+button:hover {
+  background-color: #4338ca;
+}
+.btn {
+  border: none;
+  display: inline;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+main.container {
+  padding-top: 20px;
+  min-height: 80vh;
+}
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+img {
+  width: 35vw; /* L'image occupe toute la largeur de l'écran */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style pour le message d'accueil */
+.welcome-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4f46e5; /* Couleur principale */
+  background-color: #e0e7ff; /* Fond clair pour mettre en valeur le message */
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+}

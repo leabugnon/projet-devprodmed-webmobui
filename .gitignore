@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+dist/
+
+# Laravel
+/vendor/
+.env
+/storage/
+bootstrap/cache/
+
+# IDE/OS
+.DS_Store
+Thumbs.db
+*.log
+*.sqlite*
