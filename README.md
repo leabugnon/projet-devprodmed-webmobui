@@ -33,7 +33,7 @@ php artisan serve
 ```
 
 > 🔁 configuration `.env` avec :
-⚠️ remplacez 5173 par le bon port ⚠️
+> ⚠️ remplacez 5173 par le bon port ⚠️
 ```env
 SANCTUM_STATEFUL_DOMAINS=localhost:5173
 SESSION_DOMAIN=localhost
@@ -41,6 +41,7 @@ FRONTEND_URL=http://localhost:5173
 ```
 
 > 🔁 configuration `cors.php` avec :
+> ⚠️ remplacez 5173 par le bon port ⚠️
 ```config.cors
 'allowed_origins' => [
     'http://localhost:5173',
