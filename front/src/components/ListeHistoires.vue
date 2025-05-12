@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="section-title">📋 Liste des histoires</h2>
+    <h2>📋 Liste des histoires 📋</h2>
     <div v-if="loading" class="loading">Chargement des histoires...</div>
     <ul v-else class="story-list">
       <li v-for="story in stories" :key="story.id" class="story-item">
@@ -30,12 +30,7 @@ defineProps({
 </script>
 
 <style scoped>
-.section-title {
-  font-size: 1.8rem;
-  color: #2d3748;
-  margin-bottom: 1rem;
-  text-align: left;
-}
+
 
 .loading {
   text-align: center;
@@ -67,7 +62,7 @@ defineProps({
 .story-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #edf2f7;
+  background-color: #8ebae6;
 }
 
 .story-content {

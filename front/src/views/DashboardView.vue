@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
     <div class="bienvenue">
-      <h1>Bienvenue sur le Dashboard 🎉</h1>
+      <h1>🎉 Bienvenue sur le Dashboard 🎉</h1>
       <p>Vous êtes connecté·e.</p>
     </div>
 
