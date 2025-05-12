@@ -63,6 +63,7 @@ npm run dev
 -   `GET /api/v1/stories` – Liste des histoires
 -   `GET /api/v1/stories/{id}` – Liste une histoire
 -   `GET /api/chapters/{id}` – Voir un chapitre avec ses choix
+-   `GET /api/user` – Récupère les informations de l'utilisateur connecté
 
 ## 📁 Structure
 
