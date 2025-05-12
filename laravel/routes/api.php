@@ -62,3 +62,6 @@ Route::get('/settings/welcome-message', function () {
         'welcome_message' => $setting ? $setting->welcome_message : 'Bienvenue sur notre application !',
     ], 200);
 });
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});

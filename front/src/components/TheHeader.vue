@@ -18,7 +18,7 @@
         <!-- Message de bienvenue si l'utilisateur est connecté -->
         <!-- <span v-if="userState.user" class="welcome-message">Bonjour {{ userState.user.name }} !</span> -->
         <!-- Bouton de déconnexion si l'utilisateur est connecté -->
-        <a v-if="userState.user" href="#" class="btn logout-btn" @click.prevent="logout">
+        <a v-if="isLoggedIn" href="#" class="btn logout-btn" @click.prevent="logout">
           Se déconnecter
         </a>
         <!-- Lien vers la page de connexion si l'utilisateur n'est pas connecté -->
@@ -29,11 +29,13 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-import axios from "../axios";
-import { useRouter } from "vue-router";
-import { userState } from "../store/userState"; // Importation de la variable réactive globale
+import { computed, onMounted } from 'vue'
+import { userState } from '../store/userState'
+import { useRouter } from 'vue-router'
+import axios from '../axios'
 const router = useRouter();
+// Réactif à userState.user
+const isLoggedIn = computed(() => !!userState.user)
 // Fonction pour récupérer les informations de l'utilisateur connecté
 const fetchUser = async () => {
   try {

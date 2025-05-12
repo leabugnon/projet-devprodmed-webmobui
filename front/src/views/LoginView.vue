@@ -37,7 +37,8 @@ const login = async () => {
       email: email.value,
       password: password.value,
     });
-    userState.user = response.data; // Met à jour l'utilisateur dans la variable globale
+    const userResponse = await axios.get("/api/user");
+    userState.user = userResponse.data; // Met à jour l'utilisateur dans la variable globale
     alert("✅ Connecté avec succès");
     router.push("/dashboard"); // Redirection vers le Dashboard
   } catch (error) {
