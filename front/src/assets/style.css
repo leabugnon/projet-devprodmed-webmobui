@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
 }
 
 h1 {
@@ -58,4 +58,16 @@ img {
   margin-right: auto;
 }
 
-
+/* Style pour le message d'accueil */
+.welcome-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4f46e5; /* Couleur principale */
+  background-color: #e0e7ff; /* Fond clair pour mettre en valeur le message */
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+  
+}

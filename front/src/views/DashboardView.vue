@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <h1>Bienvenue sur le Dashboard 🎉</h1>
-    <p>Vous êtes connecté·e.</p>
+  <div class="dashboard-container">
+    <div class="bienvenue">
+      <h1>Bienvenue sur le Dashboard 🎉</h1>
+      <p>Vous êtes connecté·e.</p>
+    </div>
+
     <div class="welcome-message-form">
       <h2>Modifier le message d'accueil</h2>
       <form @submit.prevent="updateWelcomeMessage">
@@ -17,21 +20,16 @@
       <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
       <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </div>
-    <h2>📋 Liste des histoires</h2>
-    <div v-if="loading">Chargement des histoires...</div>
-    <ul v-else>
-      <li v-for="story in stories" :key="story.id">
-        <router-link :to="`/story/${story.id}`">
-          {{ story.title }}
-        </router-link>
-      </li>
-    </ul>
+
+    <!-- Liste des histoires avec gestion du chargement -->
+    <ListeHistoires :stories="stories" :loading="loading" />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import axios from "../axios";
+import ListeHistoires from "../components/listeHistoires.vue";
 
 const stories = ref([]);
 const loading = ref(true);
@@ -84,31 +82,61 @@ onMounted(fetchWelcomeMessage);
 </script>
 
 <style scoped>
-/* Styles pour le formulaire */
-.welcome-message-form {
-  margin-top: 20px;
+.dashboard-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.bienvenue {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #e6f7ff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message-form {
+  margin-top: 2rem;
+}
+
 .form-control {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
   border-radius: 5px;
+  font-size: 1rem;
+  align-items: center;
+  resize: none;
 }
 
-/* Les styles scoped sont utilisés ici pour des ajustements spécifiques au composant DashboardView.
-   Cela permet d'éviter que ces styles n'affectent d'autres composants de l'application. */
-
-/* Les styles globaux (dans style.css) sont utilisés pour des éléments réutilisables ou des thèmes communs.
-   Par exemple, les boutons ou les messages d'accueil peuvent avoir un style global pour assurer une cohérence visuelle dans toute l'application. */
-
 .success-message {
-  color: green;
-  margin-top: 10px;
+  color: #38a169;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 
 .error-message {
-  color: red;
-  margin-top: 10px;
+  color: #e53e3e;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4a5568;
 }
 </style>

@@ -1,23 +1,18 @@
 <template>
   <div class="container">
     <!-- Affichage du message d'accueil -->
-    <p v-if="welcomeMessage" class="welcome-message">{{ welcomeMessage }}</p>
-    <!--liste des histoires-->
-    <h1>📋 Liste des histoires 📋</h1>
-    <div v-if="loading">Chargement des histoires...</div>
-    <ul v-else>
-      <li v-for="story in stories" :key="story.id">
-        <router-link :to="`/story/${story.id}`">
-          {{ story.title }}
-        </router-link>
-      </li>
-    </ul>
+    <div class="welcome-message">
+      <p>{{ welcomeMessage }}</p>
+    </div>
+    <!-- Liste des histoires avec gestion du chargement -->
+    <ListeHistoires :stories="stories" :loading="loading" />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import ListeHistoires from "../components/listeHistoires.vue";
 
 const stories = ref([]);
 const loading = ref(true);
@@ -45,8 +40,9 @@ onMounted(async () => {
 .welcome-message {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #555;
+  color: #000000;
   margin-left: 10px;
   margin-right: 10px;
+  background-color: #e6f7ff;
 }
 </style>
